@@ -23,8 +23,9 @@ use JMS\TranslationBundle\Model\MessageCatalogue;
 use Psr\Log\NullLogger;
 use JMS\TranslationBundle\Translation\Extractor\FileExtractor;
 use JMS\TranslationBundle\Translation\ExtractorManager;
+use PHPUnit\Framework\TestCase;
 
-class ExtractorManagerTest extends \PHPUnit_Framework_TestCase
+class ExtractorManagerTest extends TestCase
 {
     /**
      * @expectedException \InvalidArgumentException
@@ -38,7 +39,7 @@ class ExtractorManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testOnlySomeExtractorsEnabled()
     {
-        $foo = $this->getMock('JMS\TranslationBundle\Translation\ExtractorInterface');
+        $foo = $this->createMock('JMS\TranslationBundle\Translation\ExtractorInterface');
         $foo
             ->expects($this->never())
             ->method('extract')
@@ -46,7 +47,7 @@ class ExtractorManagerTest extends \PHPUnit_Framework_TestCase
 
         $catalogue = new MessageCatalogue();
         $catalogue->add(new Message('foo'));
-        $bar = $this->getMock('JMS\TranslationBundle\Translation\ExtractorInterface');
+        $bar = $this->createMock('JMS\TranslationBundle\Translation\ExtractorInterface');
         $bar
             ->expects($this->once())
             ->method('extract')
@@ -64,7 +65,7 @@ class ExtractorManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testReset()
     {
-        $foo = $this->getMock('JMS\TranslationBundle\Translation\ExtractorInterface');
+        $foo = $this->createMock('JMS\TranslationBundle\Translation\ExtractorInterface');
         $logger = new NullLogger();
 
         $extractor = new FileExtractor(new \Twig_Environment(new \Twig_Loader_Array(array())), $logger, array());

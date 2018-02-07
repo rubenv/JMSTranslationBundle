@@ -22,8 +22,9 @@ use JMS\TranslationBundle\Model\Message\XliffMessage;
 use JMS\TranslationBundle\Model\MessageCatalogue;
 use JMS\TranslationBundle\Translation\Dumper\XliffDumper;
 use JMS\TranslationBundle\Translation\Loader\XliffLoader;
+use PHPUnit\Framework\TestCase;
 
-class XliffLoaderTest extends \PHPUnit_Framework_TestCase
+class XliffLoaderTest extends TestCase
 {
     /**
      * @dataProvider getTestFiles

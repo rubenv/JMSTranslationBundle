@@ -31,8 +31,9 @@ use JMS\TranslationBundle\Translation\Extractor\File\FormExtractor;
 use JMS\TranslationBundle\Model\FileSource;
 use JMS\TranslationBundle\Model\Message;
 use JMS\TranslationBundle\Model\MessageCatalogue;
+use PHPUnit\Framework\TestCase;
 
-class ValidationExtractorTest extends \PHPUnit_Framework_TestCase
+class ValidationExtractorTest extends TestCase
 {
     public function testExtractConstraints()
     {

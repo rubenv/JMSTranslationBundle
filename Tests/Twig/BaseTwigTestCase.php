@@ -22,8 +22,9 @@ use Symfony\Component\Translation\MessageSelector;
 use Symfony\Component\Translation\IdentityTranslator;
 use Symfony\Bridge\Twig\Extension\TranslationExtension as SymfonyTranslationExtension;
 use JMS\TranslationBundle\Twig\TranslationExtension;
+use PHPUnit\Framework\TestCase;
 
-abstract class BaseTwigTestCase extends \PHPUnit_Framework_TestCase
+abstract class BaseTwigTestCase extends TestCase
 {
     final protected function parse($file, $debug = false)
     {

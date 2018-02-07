@@ -20,15 +20,16 @@ namespace JMS\TranslationBundle\Tests\Translation\Loader;
 
 use JMS\TranslationBundle\Translation\Loader\SymfonyLoaderAdapter;
 use Symfony\Component\Translation\MessageCatalogue;
+use PHPUnit\Framework\TestCase;
 
-class SymfonyLoaderAdapterTest extends \PHPUnit_Framework_TestCase
+class SymfonyLoaderAdapterTest extends TestCase
 {
     public function testLoad()
     {
         $symfonyCatalogue = new MessageCatalogue('en');
         $symfonyCatalogue->add(array('foo' => 'bar'));
         
-        $symfonyLoader = $this->getMock('Symfony\Component\Translation\Loader\LoaderInterface');
+        $symfonyLoader = $this->createMock('Symfony\Component\Translation\Loader\LoaderInterface');
         $symfonyLoader->expects($this->once())
             ->method('load')
             ->with('foo', 'en', 'messages')

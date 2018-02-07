@@ -37,8 +37,9 @@ use Symfony\Component\Translation\MessageSelector;
 use Symfony\Component\Translation\IdentityTranslator;
 use Symfony\Bridge\Twig\Extension\TranslationExtension as SymfonyTranslationExtension;
 use JMS\TranslationBundle\Translation\Extractor\FileExtractor;
+use PHPUnit\Framework\TestCase;
 
-class FileExtractorTest extends \PHPUnit_Framework_TestCase
+class FileExtractorTest extends TestCase
 {
     public function testExtractWithSimpleTestFixtures()
     {

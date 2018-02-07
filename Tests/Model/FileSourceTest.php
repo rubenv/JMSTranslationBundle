@@ -19,8 +19,9 @@
 namespace JMS\TranslationBundle\Tests\Model;
 
 use JMS\TranslationBundle\Model\FileSource;
+use PHPUnit\Framework\TestCase;
 
-class FileSourceTest extends \PHPUnit_Framework_TestCase
+class FileSourceTest extends TestCase
 {
     public function testGetPath()
     {
@@ -101,7 +102,7 @@ class FileSourceTest extends \PHPUnit_Framework_TestCase
             false,
         );
 
-        $source = $this->getMock('JMS\TranslationBundle\Model\SourceInterface');
+        $source = $this->createMock('JMS\TranslationBundle\Model\SourceInterface');
         $source
             ->expects($this->once())
             ->method('equals')
